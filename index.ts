@@ -8,8 +8,10 @@ if (typeof window !== "undefined") {
 
 const channel = new BroadcastChannel("bun-tailwindcss");
 
-export function tw(input: string) {
-  const contents = input.split(/\s+/g).filter(Boolean);
+export function tw(...inputs: string[]) {
+  const contents = inputs
+    .flatMap((input) => input.split(/\s+/g))
+    .filter(Boolean);
   if (contents.length > 0) {
     channel.postMessage({ type: "candidates", contents } satisfies MessageType);
   }

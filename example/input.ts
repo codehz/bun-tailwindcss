@@ -1,6 +1,6 @@
 import { makeClass, tw } from ".." with { type: "macro" };
 
-const value = tw("w-1/2 md:w-1/3 lg:w-1/4 bg-white");
+const value = tw("w-1/2 md:w-1/3 lg:w-1/4", "bg-white");
 const clazz = makeClass(
   "slide",
   "[&::-moz-range-track]:rounded-full [&::-webkit-slider-runnable-track]:rounded-full",
