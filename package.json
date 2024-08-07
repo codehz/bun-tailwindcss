@@ -1,6 +1,6 @@
 {
   "name": "bun-tailwindcss",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "module": "index.ts",
   "type": "module",
   "description": "A Tailwindcss(v4) macro for bun",
