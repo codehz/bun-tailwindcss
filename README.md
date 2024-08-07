@@ -15,7 +15,7 @@ export default function Item({ children }: { children: React.ReactNode }) {
 in your build.ts
 
 ```tsx
-import { TailwindCSSCollector } from "../build";
+import { TailwindCSSCollector } from "bun-tailwindcss/build";
 
 //@ts-ignore
 import input from "tailwindcss/index.css" with { type: "text" };
@@ -27,6 +27,5 @@ await Bun.build({
   outdir: ".build",
 });
 
-const css = collector.collect();
 await Bun.write(".build/generated.css", collector.collect());
 ```
