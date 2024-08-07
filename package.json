@@ -3,6 +3,12 @@
   "version": "0.0.4",
   "module": "index.ts",
   "type": "module",
+  "description": "A Tailwindcss(v4) macro for bun",
+  "keywords": [
+    "bun",
+    "macro",
+    "tailwindcss"
+  ],
   "devDependencies": {
     "@types/bun": "latest",
     "prettier": "^3.3.2"
