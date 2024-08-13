@@ -24,12 +24,13 @@ export class TailwindCSSCollector {
   constructor(private css: string) {
     this.#channel.addEventListener("message", this.#listener);
   }
-  collect() {
+  async collect() {
     const generatedClasses = [...this.#class].map(
       ([name, contents]) => `.${name} { @apply ${contents.join(" ")}; }`
     );
     const css = [this.css, ...generatedClasses].join("\n");
-    return compile(css).build([...this.#candidates]);
+    const compiled = await compile(css);
+    return compiled.build([...this.#candidates]);
   }
   [Symbol.dispose]() {
     this.#channel.removeEventListener("message", this.#listener);

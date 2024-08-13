@@ -17,6 +17,6 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "tailwindcss": "^4.0.0-alpha.18"
+    "tailwindcss": "^4.0.0-alpha.19"
   }
 }
