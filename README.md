@@ -27,5 +27,5 @@ await Bun.build({
   outdir: ".build",
 });
 
-await Bun.write(".build/generated.css", collector.collect());
+await Bun.write(".build/generated.css", await collector.collect());
 ```
