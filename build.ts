@@ -32,7 +32,10 @@ export class TailwindCSSCollector {
     }
   };
 
-  constructor(private css: string) {
+  constructor(
+    private css: string,
+    private base: string
+  ) {
     this.#channel.addEventListener("message", this.#listener);
   }
   async collect() {
@@ -40,7 +43,10 @@ export class TailwindCSSCollector {
       ([name, contents]) => `.${name} { @apply ${contents.join(" ")}; }`
     );
     const css = [this.css, ...generatedClasses].join("\n");
-    const compiled = await compile(css, { loadModule, loadStylesheet });
+    const compiled = await compile(css, {
+      loadModule: (id, base) => loadModule(id, base || this.base),
+      loadStylesheet: (id, base) => loadStylesheet(id, base || this.base),
+    });
     return compiled.build([...this.#candidates]);
   }
   [Symbol.dispose]() {
