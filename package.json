@@ -1,6 +1,6 @@
 {
   "name": "bun-tailwindcss",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "module": "index.ts",
   "type": "module",
   "description": "A Tailwindcss(v4) macro for bun",
@@ -17,6 +17,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "tailwindcss": "^4.0.0-alpha.19"
+    "enhanced-resolve": "^5.17.1",
+    "tailwindcss": "=4.0.0-alpha.25"
   }
 }
